@@ -1,17 +1,10 @@
-'use strict';
-
 // Karma configuration
-// Generated on Sat Oct 05 2013 22:00:14 GMT+0700 (ICT)
 
 module.exports = function(config) {
-    var _ = require('lodash'),
-        basePath = '../../',
-        assets = require(basePath + 'server/config/assets.json');
-
     config.set({
 
         // base path, that will be used to resolve files and exclude
-        basePath: basePath,
+        basePath: '../../',
 
 
         // frameworks to use
@@ -19,11 +12,28 @@ module.exports = function(config) {
 
 
         // list of files / patterns to load in the browser
-        files: _.flatten(_.values(assets.core.js)).concat([
-            'test/karma/unit/**/*.js',
-            'packages/*/public/**/*.js',
-            'packages/*/test/karma/**/*.js'
-        ]),
+        files: [
+            'public/lib/angular/angular.js',
+            'public/lib/angular-mocks/angular-mocks.js',
+            'public/lib/angular-cookies/angular-cookies.js',
+            'public/lib/angular-resource/angular-resource.js',
+            'public/lib/angular-route/angular-route.js',
+            'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
+            'public/lib/angular-bootstrap/ui-bootstrap.js',
+            'public/lib/angular-ui-utils/modules/route/route.js',
+            'public/js/app.js',
+            'public/js/config.js',
+            'public/js/directives.js',
+            'public/js/filters.js',
+            'public/js/services/global.js',
+            'public/js/services/articles.js',
+            'public/js/controllers/articles.js',
+            'public/js/controllers/index.js',
+            'public/js/controllers/header.js',
+            'public/js/init.js',
+            'test/karma/unit/**/*.js'
+        ],
+
 
         // list of files to exclude
         exclude: [
@@ -41,10 +51,7 @@ module.exports = function(config) {
             // source files, that you wanna generate coverage for
             // do not include tests or libraries
             // (these files will be instrumented by Istanbul)
-            'public/js/controllers/*.js': ['coverage'],
-            'public/js/services/*.js': ['coverage'],
-            'packages/*/public/*/controllers/*.js': ['coverage'],
-            'packages/*/public/*/services/*.js': ['coverage']
+            'public/js/services/*.js': ['coverage']
         },
 
         coverageReporter: {
