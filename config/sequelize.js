@@ -8,10 +8,7 @@ var db        = {};
 console.log('Initializing Sequelize');
 
 // create your instance of sequelize
-var sequelize = new Sequelize(config.db.name, config.db.username, config.db.password, {
-  dialect: 'mysql',
-  storage: config.db.storage
-});
+var sequelize = new Sequelize(config.db.name, config.db.username, config.db.password);
 
 // loop through all files in models directory ignoring hidden files and this file
 fs.readdirSync(config.modelsDir)

@@ -1,7 +1,7 @@
 module.exports = {
     db: {
         name: "mean_idea",
-        password: "",
+        password: "root",
         username: "root"
     },
     app: {
