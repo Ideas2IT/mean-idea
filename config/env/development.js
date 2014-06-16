@@ -1,6 +1,6 @@
 module.exports = {
     db: {
-        name: "mean_idea",
+        name: "meanidea",
         password: "root",
         username: "root"
     },
